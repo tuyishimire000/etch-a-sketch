@@ -1,30 +1,26 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
     margin-top: 30px;
+    color: #333;
 }
 
-#container {
+.controls {
+    margin-top: 30px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 30px;
-    width: 512px;
-    height: 512px;
-    border: 1px solid #ccc;
+    align-items: center;
 }
 
-.square {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #eee;
-}
-
-button {
-    margin-top: 30px;
+.controls button {
+    margin-left: 10px;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -33,6 +29,52 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.controls button:hover {
     background-color: #0056b3;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.input-container label {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.input-container input {
+    width: 50px;
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: 1px;
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.square {
+    background-color: #eee;
+}
+
+.square:hover {
+    background-color: #ccc;
+}
+
+#reset-button {
+    background-color: #dc3545;
+}
+
+#reset-button:hover {
+    background-color: #c82333;
 }

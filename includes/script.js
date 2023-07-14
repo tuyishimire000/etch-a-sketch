@@ -1,5 +1,6 @@
 const container = document.getElementById('container');
 const resetButton = document.getElementById('reset-button');
+const gridSizeInput = document.getElementById('grid-size');
 
 function createGrid(size) {
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -19,7 +20,7 @@ function clearGrid() {
 }
 
 function resetGrid() {
-    let newSize = prompt('Enter the number of squares per side for the new grid (maximum: 100):');
+    let newSize = gridSizeInput.value;
     newSize = parseInt(newSize);
     if (isNaN(newSize) || newSize <= 0 || newSize > 100) {
         alert('Invalid input! Please enter a valid number between 1 and 100.');
@@ -34,7 +35,7 @@ function changeColor(e) {
     const square = e.target;
     const currentColor = square.style.backgroundColor;
 
-    if (!currentColor || currentColor === 'rgb(255, 255, 255)') {
+    if (!currentColor || currentColor === 'rgb(238, 238, 238)') {
         square.style.backgroundColor = getRandomColor();
         square.dataset.darkness = 0;
     } else {
